@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/exercise', exerciseRouter);
+app.use('exercise', exerciseRouter);
 
 app.listen(4000, () => {
   console.log("Le serveur est actif sur le port 4000");

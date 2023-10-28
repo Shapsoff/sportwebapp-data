@@ -6,7 +6,6 @@ require('dotenv').config();
 
 const connectionString = process.env.MONGODB_URI;
 
-
 class Database {
     constructor() {
       this._connect();
@@ -36,22 +35,6 @@ class Database {
     bilateral: Boolean,
     unilateral: Boolean
   }), 'sport');
-
-//   const newSport = new SportModel({
-//     name: "curl",
-//     bodyPart: "bras",
-//     mainMuslces: ["biceps"],
-//     stabilazingMuscles: ["deltoide"],
-//     unilateral: {oui: 1, non: 1}
-//   });
-  
-//   newSport.save()
-//   .then(() => {
-//     console.log('Save Sport at MongoDB');
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
 
   router.get("/", async (request, response) => {
     const sport = await SportModel.find({});
