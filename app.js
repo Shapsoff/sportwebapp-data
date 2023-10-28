@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var exerciseRouter = require('./routes/exercise');
+var testRouter = require('./routes/test');
 
 var app = express();
 
@@ -19,6 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/exercise', exerciseRouter);
+app.use('/test', testRouter);
 
 app.listen(4000, () => {
   console.log("Le serveur est actif sur le port 4000");
