@@ -5,7 +5,6 @@ const router = express.Router();
 require('dotenv').config();
 
 const connectionString = process.env.MONGODB_URI;
-console.log(connectionString);
 
 class Database {
     constructor() {
